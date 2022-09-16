@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sea
       objectReference: {fileID: 0}
+    - target: {fileID: 138394, guid: a9311f914f1a8ae4585af8f8d8457e56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 488286, guid: a9311f914f1a8ae4585af8f8d8457e56, type: 3}
       propertyPath: m_RootOrder
       value: 3

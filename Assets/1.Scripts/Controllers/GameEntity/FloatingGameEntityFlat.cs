@@ -38,7 +38,7 @@ public class FloatingGameEntityFlat : GameEntity
 
         //This will prepare static cache, modifying vertices using rotation and position offset.
         WaterCutter.CookMesh(transform.position, transform.rotation, ref _triangles, ref worldBuffer);
-        
+
         /*
             Now mesh ae reprensented in World position, we can split the mesh, and split tris that are partially submerged.
             Here I use a very simple water model, already implemented in the DLL.
@@ -49,25 +49,25 @@ public class FloatingGameEntityFlat : GameEntity
         Archimeds.ComputeAllForces(wetTris, dryTris, nbrWet, nbrDry, speed, rb);
     }
 
-    
-   
+
+
 #if UNITY_EDITOR
     //Some visualizations for this buyoancy script.
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
 
-        if(!Application.isPlaying)
+        if (!Application.isPlaying)
             return;
 
         Gizmos.color = Color.blue;
-        for(uint i = 0 ; i < nbrWet ; i++)
+        for (uint i = 0; i < nbrWet; i++)
         {
             Gizmos.DrawLine(wetTris[i].a, wetTris[i].b);
             Gizmos.DrawLine(wetTris[i].b, wetTris[i].c);
             Gizmos.DrawLine(wetTris[i].a, wetTris[i].c);
         }
-        
+
         Gizmos.color = Color.yellow;
         for (uint i = 0; i < nbrDry; i++)
         {

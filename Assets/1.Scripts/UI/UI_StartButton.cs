@@ -7,12 +7,21 @@ using UnityEngine.EventSystems;
 
 public class UI_StartButton : UI_Base
 {
-    enum GameObjects
+    //enum GameObjects
+    //{
+    //   StartText,
+    //}
+
+    enum Buttons 
     {
-       StarButton,
-       StartText,
+        StarButton,
     }
-    string _name;
+
+    enum Texts 
+    {
+        StarText,
+    }
+   
 
     private void Start()
     {
@@ -21,11 +30,13 @@ public class UI_StartButton : UI_Base
 
     public override void Init()
     {
-        Bind<GameObject>(typeof(GameObjects));
+        Bind<Button>(typeof(Buttons));
 
 
     }
-   
+    
+    
+    string _name;
     public void OnButtonCliked(PointerEventData data)
     {
         //Todo
